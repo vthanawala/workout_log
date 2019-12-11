@@ -1,6 +1,9 @@
 class Workout < ApplicationRecord
   # Direct associations
 
+  has_one    :lift,
+             :dependent => :destroy
+
   has_one    :run,
              :dependent => :destroy
 
