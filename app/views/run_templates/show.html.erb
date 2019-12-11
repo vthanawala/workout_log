@@ -34,7 +34,11 @@
       </dt>
       <!-- Display workout_id start -->
       <dd>
-        <%= @run.workout_id %>
+        <% if @run.workout.present? %>
+          <a href="/workouts/<%= @run.workout_id %>">
+            <%= @run.workout.user_id %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display workout_id end -->
 

@@ -66,7 +66,11 @@
 
         <!-- Display run.workout_id start -->
         <td>
-          <%= run.workout.user_id %>
+          <% if run.workout.present? %>
+            <a href="/workouts/<%= run.workout.id %>">
+              <%= run.workout.user_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display run.workout_id end -->
 
