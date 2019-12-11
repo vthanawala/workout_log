@@ -1,0 +1,65 @@
+<!-- Validation failure messages -->
+<% if @lift.errors.any? %>
+  <% @lift.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit lift #<%= @lift.id %>
+</h1>
+
+<hr>
+
+<!-- Form lift start -->
+<form action="/update_lift/<%= @lift.id %>" method="post">
+<!-- Form lift end -->
+
+  <!-- Label and input for workout_id start -->
+  <div class="form-group">
+    <label for="workout_id">
+      Workout
+    </label>
+
+    <!-- Input for workout_id start -->
+    <input type="text" id="workout_id" name="workout_id" class="form-control" value="<%= @lift.workout_id %>">
+    <!-- Input for workout_id end -->
+  </div>
+  <!-- Label and input for workout_id end -->
+
+  <!-- Label and input for body_part start -->
+  <div class="form-group">
+    <label for="body_part">
+      Body part
+    </label>
+
+    <!-- Input for body_part start -->
+    <input type="text" id="body_part" name="body_part" class="form-control" value="<%= @lift.body_part %>">
+    <!-- Input for body_part end -->
+  </div>
+  <!-- Label and input for body_part end -->
+
+  <!-- Label and input for comments start -->
+  <div class="form-group">
+    <label for="comments">
+      Comments
+    </label>
+
+    <!-- Input for comments start -->
+    <input type="text" id="comments" name="comments" class="form-control" value="<%= @lift.comments %>">
+    <!-- Input for comments end -->
+  </div>
+  <!-- Label and input for comments end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update lift
+  </button>
+</form>
+
+<hr>
+
+<a href="/lifts">
+  Go back
+</a>

@@ -1,0 +1,82 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Lift #<%= @lift.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/lifts" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link lift start -->
+      <div class="col">
+        <a href="/lifts/<%= @lift.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit lift
+        </a>
+      </div>
+      <!-- Edit link lift end -->
+
+      <!-- Delete link lift start -->
+      <div class="col">
+        <a href="/delete_lift/<%= @lift.id %>" class="btn btn-block btn-outline-secondary">
+          Delete lift
+        </a>
+      </div>
+      <!-- Delete link lift end -->
+    </div>
+
+    <dl>
+      <dt>
+        Workout
+      </dt>
+      <!-- Display workout_id start -->
+      <dd>
+        <%= @lift.workout_id %>
+      </dd>
+      <!-- Display workout_id end -->
+
+      <dt>
+        Body part
+      </dt>
+      <!-- Display body_part start -->
+      <dd>
+        <%= @lift.body_part %>
+      </dd>
+      <!-- Display body_part end -->
+
+      <dt>
+        Comments
+      </dt>
+      <!-- Display comments start -->
+      <dd>
+        <%= @lift.comments %>
+      </dd>
+      <!-- Display comments end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@lift.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@lift.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
