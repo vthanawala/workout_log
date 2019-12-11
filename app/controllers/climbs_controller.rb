@@ -1,6 +1,6 @@
 class ClimbsController < ApplicationController
   def index
-    @climbs = Climb.all
+    @climbs = Climb.page(params[:page]).per(10)
 
     render("climb_templates/index.html.erb")
   end
