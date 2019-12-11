@@ -1,6 +1,7 @@
 class ClimbsController < ApplicationController
   def index
-    @climbs = Climb.page(params[:page]).per(10)
+    @q = Climb.ransack(params[:q])
+    @climbs = @q.result(:distinct => true).includes(:workout).page(params[:page]).per(10)
 
     render("climb_templates/index.html.erb")
   end
