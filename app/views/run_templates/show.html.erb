@@ -1,0 +1,91 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Run #<%= @run.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/runs" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link run start -->
+      <div class="col">
+        <a href="/runs/<%= @run.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit run
+        </a>
+      </div>
+      <!-- Edit link run end -->
+
+      <!-- Delete link run start -->
+      <div class="col">
+        <a href="/delete_run/<%= @run.id %>" class="btn btn-block btn-outline-secondary">
+          Delete run
+        </a>
+      </div>
+      <!-- Delete link run end -->
+    </div>
+
+    <dl>
+      <dt>
+        Workout
+      </dt>
+      <!-- Display workout_id start -->
+      <dd>
+        <%= @run.workout_id %>
+      </dd>
+      <!-- Display workout_id end -->
+
+      <dt>
+        Distance
+      </dt>
+      <!-- Display distance start -->
+      <dd>
+        <%= @run.distance %>
+      </dd>
+      <!-- Display distance end -->
+
+      <dt>
+        Time
+      </dt>
+      <!-- Display time start -->
+      <dd>
+        <%= @run.time %>
+      </dd>
+      <!-- Display time end -->
+
+      <dt>
+        Comments
+      </dt>
+      <!-- Display comments start -->
+      <dd>
+        <%= @run.comments %>
+      </dd>
+      <!-- Display comments end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@run.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@run.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

@@ -1,0 +1,80 @@
+<!-- Validation failure messages -->
+<% if @run.present? %>
+  <% if @run.errors.any? %>
+    <% @run.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new run
+</h1>
+
+
+<hr>
+
+<!-- Form run start -->
+<form action="/create_run" method="post">
+<!-- Form run end -->
+
+  <!-- Label and input for workout_id start -->
+  <div class="form-group">
+    <label for="workout_id">
+      Workout
+    </label>
+
+    <!-- Input for workout_id start -->
+    <input type="text" id="workout_id" name="workout_id" class="form-control" value="<%= @run.workout_id %>">
+    <!-- Input for workout_id end -->
+  </div>
+  <!-- Label and input for workout_id end -->
+
+  <!-- Label and input for distance start -->
+  <div class="form-group">
+    <label for="distance">
+      Distance
+    </label>
+
+    <!-- Input for distance start -->
+    <input type="text" id="distance" name="distance" class="form-control" value="<%= @run.distance %>">
+    <!-- Input for distance end -->
+  </div>
+  <!-- Label and input for distance end -->
+
+  <!-- Label and input for time start -->
+  <div class="form-group">
+    <label for="time">
+      Time
+    </label>
+
+    <!-- Input for time start -->
+    <input type="text" id="time" name="time" class="form-control" value="<%= @run.time %>">
+    <!-- Input for time end -->
+  </div>
+  <!-- Label and input for time end -->
+
+  <!-- Label and input for comments start -->
+  <div class="form-group">
+    <label for="comments">
+      Comments
+    </label>
+
+    <!-- Input for comments start -->
+    <input type="text" id="comments" name="comments" class="form-control" value="<%= @run.comments %>">
+    <!-- Input for comments end -->
+  </div>
+  <!-- Label and input for comments end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create run
+  </button>
+</form>
+
+<hr>
+
+<a href="/runs">
+  Go back
+</a>
