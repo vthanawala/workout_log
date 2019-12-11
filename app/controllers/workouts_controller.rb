@@ -42,7 +42,7 @@ class WorkoutsController < ApplicationController
   def update_row
     @workout = Workout.find(params.fetch("id_to_modify"))
 
-    @workout.user_id = params.fetch("user_id")
+    
     @workout.date = params.fetch("date")
     @workout.category = params.fetch("category")
 
