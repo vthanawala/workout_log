@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "run_templates/runs_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -62,13 +58,10 @@
 
       <% @runs.each do |run| %>
       <tr>
-        <!-- Display run.id start -->
         <td>
           <%= run.id %>
         </td>
-        <!-- Display run.id end -->
 
-        <!-- Display run.workout_id start -->
         <td>
           <% if run.workout.present? %>
             <a href="/workouts/<%= run.workout.id %>">
@@ -76,37 +69,26 @@
             </a>
           <% end %>
         </td>
-        <!-- Display run.workout_id end -->
 
-        <!-- Display run.distance start -->
         <td>
           <%= run.distance %>
         </td>
-        <!-- Display run.distance end -->
 
-        <!-- Display run.time start -->
         <td>
           <%= run.time %>
         </td>
-        <!-- Display run.time end -->
 
-        <!-- Display run.comments start -->
         <td>
           <%= run.comments %>
         </td>
-        <!-- Display run.comments end -->
 
-        <!-- Display run.created_at start -->
         <td>
           <%= time_ago_in_words(run.created_at) %> ago
         </td>
-        <!-- Display run.created_at end -->
 
-        <!-- Display run.updated_at start -->
         <td>
           <%= time_ago_in_words(run.updated_at) %> ago
         </td>
-        <!-- Display run.updated_at end -->
 
         <td>
           <a href="/runs/<%= run.id %>">

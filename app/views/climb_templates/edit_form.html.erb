@@ -4,45 +4,31 @@
 
 <hr>
 
-<!-- Form climb start -->
 <form action="/update_climb/<%= @climb.id %>" method="post">
-<!-- Form climb end -->
 
-  <!-- Label and input for workout_id start -->
   <div class="form-group">
     <label for="workout_id">
       Workout
     </label>
 
-    <!-- Input for workout_id start -->
     <%= select_tag(:workout_id, options_from_collection_for_select(Workout.all, :id, :user_id, @climb.workout_id), :class => "form-control") %>
-    <!-- Input for workout_id end -->
   </div>
-  <!-- Label and input for workout_id end -->
 
-  <!-- Label and input for routes start -->
   <div class="form-group">
     <label for="routes">
       Routes
     </label>
 
-    <!-- Input for routes start -->
     <input type="text" id="routes" name="routes" class="form-control" value="<%= @climb.routes %>">
-    <!-- Input for routes end -->
   </div>
-  <!-- Label and input for routes end -->
 
-  <!-- Label and input for comments start -->
   <div class="form-group">
     <label for="comments">
       Comments
     </label>
 
-    <!-- Input for comments start -->
     <input type="text" id="comments" name="comments" class="form-control" value="<%= @climb.comments %>">
-    <!-- Input for comments end -->
   </div>
-  <!-- Label and input for comments end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update climb
